@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hawaii Juices - Authentic Omani Flavors</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      /* Custom Animations */
+      .fade-in {
+          animation: fadeIn 2s ease-in-out;
+      }
+
+      @keyframes fadeIn {
+          from {
+              opacity: 0;
+          }
+
+          to {
+              opacity: 1;
+          }
+      }
+
+      .slide-in {
+          animation: slideIn 1s ease-in-out;
+      }
+
+      @keyframes slideIn {
+          from {
+              transform: translateX(-100%);
+              opacity: 0;
+          }
+
+          to {
+              transform: translateX(0);
+              opacity: 1;
+          }
+      }
+
+      .bounce {
+          animation: bounce 0.3s;
+      }
+
+      @keyframes bounce {
+          0%,
+          100% {
+              transform: translateY(0);
+          }
+
+          50% {
+              transform: translateY(-5px);
+          }
+      }
+    </style>
+  </head>
+
+  <body class="bg-white text-gray-800">
+
+    <!-- Navbar -->
+    <nav class="sticky top-0 bg-white shadow-lg z-10">
+      <div class="container mx-auto flex justify-between items-center p-4">
+        <a href="#" class="text-2xl font-bold text-red-600">Hawaii</a>
+        <div class="hidden md:flex space-x-6">
+          <a href="#home" class="hover:text-red-600">Home</a>
+          <a href="#about" class="hover:text-red-600">About</a>
+          <a href="#products" class="hover:text-red-600">Products</a>
+          <a href="#contact" class="hover:text-red-600">Contact</a>
+        </div>
+        <div class="md:hidden">
+          <button id="burger" class="text-3xl focus:outline-none">
+            &#9776;
+          </button>
+        </div>
+      </div>
+      <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg p-4">
+        <a href="#home" class="block mb-2 hover:text-red-600">Home</a>
+        <a href="#about" class="block mb-2 hover:text-red-600">About</a>
+        <a href="#products" class="block mb-2 hover:text-red-600">Products</a>
+        <a href="#contact" class="block hover:text-red-600">Contact</a>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative h-screen bg-cover bg-center" style="background-image: url('hero-image.jpg');">
+      <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center fade-in">
+        <div class="text-center text-white px-4">
+          <h1 class="text-5xl md:text-6xl font-bold mb-4">Welcome to Hawaii</h1>
+          <p class="text-xl md:text-2xl mb-6">Authentic Omani Juices</p>
+          <a href="#products" class="px-6 py-3 bg-red-600 hover:bg-red-700 rounded-full text-white transition">Explore Our Juices</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="bg-gray-50 py-20">
+      <div class="container mx-auto">
+        <div class="flex flex-col md:flex-row items-center space-y-10 md:space-y-0 md:space-x-10">
+          
+          <!-- Image Section -->
+          <div class="md:w-1/2 order-1 md:order-2 relative">
+            <img src="about-image.jpg" alt="About Hawaii" class="w-full rounded-lg shadow-lg transform transition duration-500 ease-in-out hover:scale-105">
+            <div class="absolute inset-0 border-0 rounded-lg transform transition duration-500 ease-in-out hover:translate-x-2 hover:translate-y-2"></div>
+          </div>
+          
+          <!-- Content Section -->
+          <div class="md:w-1/2 order-2 md:order-1">
+            <h2 class="text-4xl font-bold text-red-600 mb-4 animate-fade-in">Our Story</h2>
+            <p class="text-lg leading-relaxed mb-4 animate-slide-in">
+              Founded in the heart of Oman, <span class="font-semibold text-red-600">Hawaii Juices</span> is more than just a beverage company; it’s a celebration of our rich Omani heritage. Every bottle we produce is infused with the authentic flavors of Arabia, bringing the essence of our homeland to your table.
+            </p>
+            <p class="text-lg leading-relaxed mb-4 animate-slide-in delay-100">
+              Our journey began with a passion for crafting <span class="font-semibold text-red-600">all-natural juices</span> that embody the spirit of Omani traditions. We carefully select the freshest local fruits and blend them with time-honored techniques to create juices that are as nourishing as they are delicious.
+            </p>
+            <p class="text-lg leading-relaxed animate-slide-in delay-200">
+              At Hawaii, we believe in the power of nature and the importance of sustainability. Our commitment to quality and authenticity ensures that every sip is not just a drink, but an experience of the true flavors of Oman. Join us as we continue to share the <span class="font-semibold text-red-600">timeless tastes</span> of our culture with the world.
+            </p>
+          </div>
+          
+        </div>
+      </div>
+    </section>    
+
+    <!-- Products Section -->
+    <section id="products" class="bg-gray-100 py-20">
+      <div class="container mx-auto">
+        <h2 class="text-4xl font-bold text-center text-red-600 mb-12">Our Juices</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+          <!-- Product 1 -->
+          <div class="group relative w-full h-70 overflow-hidden rounded-lg shadow-lg">
+            <!-- Background Image -->
+            <img src="pineapple.jpeg" alt="pineapple juice" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+
+            <!-- Gradient Overlay -->
+            <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70 group-hover:opacity-80 transition-opacity duration-300"></div>
+
+            <!-- Content -->
+            <div class="absolute bottom-0 left-0 right-0 p-4 text-white">
+              <h2 class="text-lg font-bold">Pineapple Juice</h2>
+              <p class="text-sm">A refreshing blend of juicy pineapple and zesty ginger, lightly sweetened with sugar and balanced with natural citric acid.</p>
+            </div>
+          </div>
+          <!-- Product 2 -->
+          <div class="group relative w-full h-70 overflow-hidden rounded-lg shadow-lg">
+            <!-- Background Image -->
+            <img src="grape.jpeg" alt="grape juice" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+
+            <!-- Gradient Overlay -->
+            <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70 group-hover:opacity-80 transition-opacity duration-300"></div>
+
+            <!-- Content -->
+            <div class="absolute bottom-0 left-0 right-0 p-4 text-white">
+              <h2 class="text-lg font-bold">Ball Grape Juice</h2>
+              <p class="text-sm">Enjoy the vibrant and refreshing taste of sun-ripened grapes, perfectly balanced with a hint of ginger and natural sweetness.</p>
+            </div>
+          </div>
+          <!-- Product 3 -->
+          <div class="group relative w-full h-70 overflow-hidden rounded-lg shadow-lg">
+            <!-- Background Image -->
+            <img src="apple-banana.jpeg" alt="apple banana juice" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+
+            <!-- Gradient Overlay -->
+            <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70 group-hover:opacity-80 transition-opacity duration-300"></div>
+
+            <!-- Content -->
+            <div class="absolute bottom-0 left-0 right-0 p-4 text-white">
+              <h2 class="text-lg font-bold">Apple Banana Juice</h2>
+              <p class="text-sm">Experience the smooth and refreshing blend of crisp apples and ripe bananas, naturally sweetened and bursting with delightful flavors.</p>
+            </div>
+          </div>
+
+          <!-- Product 4 -->
+          <div class="group relative w-full h-70 overflow-hidden rounded-lg shadow-lg">
+            <!-- Background Image -->
+            <img src="ice-bounty.jpeg" alt="ice bounty juice" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+
+            <!-- Gradient Overlay -->
+            <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70 group-hover:opacity-80 transition-opacity duration-300"></div>
+
+            <!-- Content -->
+            <div class="absolute bottom-0 left-0 right-0 p-4 text-white">
+              <h2 class="text-lg font-bold">Ice Bounty Cooler</h2>
+              <p class="text-sm">Savor the rich and creamy indulgence of Ice Bounty, crafted with premium cocoa, milk, cashews, and a blend of dry fruits.</p>
+            </div>
+          </div>
+          <!-- Product 5 -->
+          <div class="group relative w-full h-70 overflow-hidden rounded-lg shadow-lg">
+            <!-- Background Image -->
+            <img src="mango.jpeg" alt="mango juice" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+
+            <!-- Gradient Overlay -->
+            <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70 group-hover:opacity-80 transition-opacity duration-300"></div>
+
+            <!-- Content -->
+            <div class="absolute bottom-0 left-0 right-0 p-4 text-white">
+              <h2 class="text-lg font-bold">Mango Mania</h2>
+              <p class="text-sm">Delight in the tropical sweetness of ripe mangoes, with a hint of ginger, perfectly balanced by natural citric acid.</p>
+            </div>
+          </div>
+          <!-- Product 6 -->
+          <div class="group relative w-full h-70 overflow-hidden rounded-lg shadow-lg">
+            <!-- Background Image -->
+            <img src="mixed-fruit.jpeg" alt="mixed fruit juice" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+
+            <!-- Gradient Overlay -->
+            <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70 group-hover:opacity-80 transition-opacity duration-300"></div>
+
+            <!-- Content -->
+            <div class="absolute bottom-0 left-0 right-0 p-4 text-white">
+              <h2 class="text-lg font-bold">Mixed Fruit Delight</h2>
+              <p class="text-sm">Enjoy the vibrant medley of flavors in our Mixed Fruit Juice, a refreshing blend of the finest sun-ripened fruits.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="container mx-auto py-20">
+      <div class="w-full md:w-2/3 mx-auto">
+        <h2 class="text-4xl font-bold text-center text-red-600 mb-12">Contact Us</h2>
+        <form action="https://formspree.io/f/myzgbpnp"
+          method="POST"
+          class="bg-white p-6 rounded-lg shadow-lg fade-in">
+          <div class="mb-4">
+            <label for="name" class="block text-lg font-semibold mb-2">Name</label>
+            <input type="text" id="name" class="w-full p-3 border border-gray-300 rounded-lg">
+          </div>
+          <div class="mb-4">
+            <label for="email" class="block text-lg font-semibold mb-2">Email</label>
+            <input type="email" id="email" class="w-full p-3 border border-gray-300 rounded-lg" name="email">
+          </div>
+          <div class="mb-4">
+            <label for="message" class="block text-lg font-semibold mb-2">Message</label>
+            <textarea id="message" class="w-full p-3 border border-gray-300 rounded-lg" name="message"></textarea>
+          </div>
+          <button type="submit" class="w-full p-3 bg-red-600 hover:bg-red-700 text-white font-bold rounded-lg bounce">Send Message</button>
+        </form>
+        <div class="text-center mt-8">
+          <p>Address: ZAHRAT ALKHLEEJ GENERAL TRADING AND PRODUCTION SPC </br> P.O. Box: 140, Postal Code: 120, Ruwi High Street, </br> Muscat, Sultanate of Oman</p>
+          <p>Phone: +968 780 660 70</p>
+          <p>Email: Hawaiifreshjuices@gmail.com</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-6">
+      <div class="container mx-auto text-center">
+        <p>&copy; 2024 ZAHRAT ALKHLEEJ GENERAL TRADING AND PRODUCTION SPC. All rights reserved.</p>
+        <div class="mt-4">
+          <a href="#" class="mx-2 hover:text-red-600">Facebook</a>
+          <a href="#" class="mx-2 hover:text-red-600">Twitter</a>
+          <a href="#" class="mx-2 hover:text-red-600">Instagram</a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Burger Menu Script -->
+    <script>
+        document.getElementById('burger').addEventListener('click', function () {
+            var menu = document.getElementById('mobile-menu');
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+            } else {
+                menu.classList.add('hidden');
+            }
+        });
+    </script>
+
+</body>
+
+</html>
+
