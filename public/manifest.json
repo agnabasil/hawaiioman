@@ -1,0 +1,16 @@
+{
+  "name": "Hawaii Fresh Juice",
+  "short_name": "Hawaii Juice",
+  "description": "Authentic Omani freshness in every bottle.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#F26431",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ]
+}
