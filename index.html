@@ -1,22 +1,24 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" dir="ltr">
 
 <head>
   <meta charset="UTF-8" />
   <link rel="icon" type="image/png" href="/favicon.png" />
   <link rel="manifest" href="/manifest.json" />
-  <link rel="canonical" href="https://hawaiioman.com/" />
   <meta name="theme-color" content="#F26431" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <!-- Fallback SEO (overridden per-page by react-helmet-async) -->
   <title>Hawaii Fresh Juice | Taste Oman in Every Sip</title>
   <meta name="description"
     content="Authentic Omani freshness in every bottle. Hawaii Fresh Juice offers 100% natural, farm-to-bottle juices from carefully selected local fruits. Taste the bounty of Oman." />
   <meta name="keywords"
-    content="Hawaii Fresh Juice, Oman juice, fresh juice Oman, Omani natural juice, farm to bottle, healthy juice, Omani fruits" />
+    content="Hawaii Fresh Juice, Oman juice, fresh juice Oman, Omani natural juice, farm to bottle, healthy juice, Omani fruits, organic juice Muscat, best juice in Oman" />
 
-  <!-- Open Graph / Social Media -->
+  <!-- Open Graph / Social Media (fallback, overridden per-page) -->
   <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Hawaii Fresh Juice" />
+  <meta property="og:locale" content="en_OM" />
   <meta property="og:title" content="Hawaii Fresh Juice | Taste Oman in Every Sip" />
   <meta property="og:description"
     content="100% natural, farm-to-bottle juices from the heart of Oman. Pure freshness, every time." />
@@ -26,29 +28,100 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Hawaii Fresh Juice | Taste Oman" />
   <meta name="twitter:description" content="100% natural juices from the heart of Oman." />
+  <meta name="twitter:image" content="https://hawaiioman.com/assets/og-image.jpg" />
 
-  <!-- Structured Data (JSON-LD) -->
+  <!-- hreflang for international SEO -->
+  <link rel="alternate" hreflang="en" href="https://hawaiioman.com/" />
+  <link rel="alternate" hreflang="x-default" href="https://hawaiioman.com/" />
+
+  <!-- Organization Structured Data -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Hawaii Fresh Juice",
+      "alternateName": "Hawaii Juices",
+      "url": "https://hawaiioman.com",
+      "logo": "https://hawaiioman.com/images/hawaii-logo.png",
+      "description": "Authentic Omani freshness in every bottle. 100% natural, farm-to-bottle juices from carefully selected local fruits.",
+      "foundingDate": "2024-03",
+      "founder": {
+        "@type": "Person",
+        "name": "Yasir Arafath",
+        "jobTitle": "CEO & Founder"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "Oman"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Al Wadi Al Kabir",
+        "addressLocality": "Muscat",
+        "addressCountry": "OM"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+968-7972-7401",
+        "email": "jannajuices@gmail.com",
+        "contactType": "customer service",
+        "availableLanguage": ["English", "Arabic"]
+      }
+    }
+  </script>
+
+  <!-- LocalBusiness Structured Data -->
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
       "name": "Hawaii Fresh Juice",
-      "description": "Authentic Omani freshness in every bottle.",
+      "description": "100% natural, farm-to-bottle fruit juices from Oman.",
       "url": "https://hawaiioman.com",
-      "logo": "https://hawaiioman.com/favicon.png",
-      "areaServed": "Oman",
+      "logo": "https://hawaiioman.com/images/hawaii-logo.png",
+      "image": "https://hawaiioman.com/assets/og-image.jpg",
+      "telephone": "+968-7972-7401",
+      "email": "jannajuices@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Al Wadi Al Kabir",
+        "addressLocality": "Muscat",
+        "addressRegion": "Muscat Governorate",
+        "addressCountry": "OM"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday"],
+          "opens": "08:00",
+          "closes": "18:00"
+        }
+      ],
+      "priceRange": "$$",
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
         "name": "Fresh Juices",
         "itemListElement": [
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Product",
-              "name": "Omani Fresh Juices"
-            }
-          }
+          { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Ginger Orange Juice" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Ball Grape Juice" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Pieces Mango Juice" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Natural Lemon Juice" } }
         ]
+      }
+    }
+  </script>
+
+  <!-- WebSite with SearchAction -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Hawaii Fresh Juice",
+      "url": "https://hawaiioman.com",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://hawaiioman.com/products?q={search_term_string}",
+        "query-input": "required name=search_term_string"
       }
     }
   </script>

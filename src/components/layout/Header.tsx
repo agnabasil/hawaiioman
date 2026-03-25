@@ -14,7 +14,7 @@ export const Header: React.FC = () => {
           <div className="h-10 w-auto flex items-center shrink-0">
             <img src="/images/hawaii-logo.png" alt="Hawaii Fresh Juice Logo" className="h-full w-auto object-contain" />
           </div>
-          <h2 className="text-text-main text-2xl font-display font-bold leading-tight select-none -ml-3">Hawaii Fresh Juice</h2>
+          <span className="text-text-main text-2xl font-display font-bold leading-tight select-none -ml-3">Hawaii Fresh Juice</span>
         </Link>
         <nav className="hidden md:flex items-center gap-10">
           <Link to="/" className={`text-xs font-bold uppercase tracking-widest transition-colors ${isActive('/') ? 'text-primary border-b-2 border-primary' : 'text-text-main hover:text-primary'}`}>Home</Link>

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { SEOHead } from '../components/SEOHead';
 
 export const Contact: React.FC = () => {
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
@@ -30,6 +31,28 @@ export const Contact: React.FC = () => {
   };
   return (
     <div className="flex-grow flex items-center justify-center p-4 md:p-8 lg:p-12 relative min-h-[80vh]">
+      <SEOHead
+        title="Contact Us"
+        description="Get in touch with Hawaii Fresh Juice in Muscat, Oman. Visit our juice bar in Al Wadi Al Kabir, or drop us a message about wholesale inquiries, partnerships, or feedback."
+        canonical="https://hawaiioman.com/contact"
+        jsonLd={[
+          {
+            "@context": "https://schema.org",
+            "@type": "ContactPage",
+            "name": "Contact Hawaii Fresh Juice",
+            "url": "https://hawaiioman.com/contact"
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://hawaiioman.com" },
+              { "@type": "ListItem", "position": 2, "name": "Contact", "item": "https://hawaiioman.com/contact" }
+            ]
+          }
+        ]}
+      />
+
       {/* Organic Background Elements */}
       <div className="absolute top-[-10%] right-[-5%] w-[600px] h-[600px] bg-primary/5 rounded-[40%_60%_70%_30%/40%_50%_60%_50%] -z-10 pointer-events-none hidden md:block"></div>
       <div className="absolute bottom-[-10%] left-[-5%] w-[500px] h-[500px] bg-muted/5 rounded-[60%_40%_30%_70%/50%_40%_50%_60%] -z-10 pointer-events-none hidden md:block"></div>
@@ -48,7 +71,7 @@ export const Contact: React.FC = () => {
             <div className="relative">
               <input
                 type="text"
-                id="name"
+                id="contact-name"
                 name="name"
                 placeholder="Full Name"
                 required
@@ -59,7 +82,7 @@ export const Contact: React.FC = () => {
             <div className="relative">
               <input
                 type="email"
-                id="email"
+                id="contact-email"
                 name="email"
                 placeholder="Email Address"
                 required
@@ -69,7 +92,7 @@ export const Contact: React.FC = () => {
 
             <div className="relative mb-6">
               <textarea
-                id="message"
+                id="contact-message"
                 name="message"
                 placeholder="Your Message"
                 required
@@ -107,7 +130,7 @@ export const Contact: React.FC = () => {
         <div className="w-full lg:w-1/2 bg-background-light p-8 md:p-12 border-l border-muted/5 flex flex-col">
           <h2 className="font-display text-2xl font-bold text-text-main mb-6">Visit Our Muscat Juice Bar</h2>
 
-          <div className="space-y-6 mb-8 flex-grow">
+          <address className="space-y-6 mb-8 flex-grow not-italic">
             <div className="flex items-start gap-4">
               <div className="w-10 h-10 rounded-full bg-surface flex items-center justify-center text-primary shadow-sm shrink-0">
                 <span className="material-symbols-outlined">location_on</span>
@@ -134,18 +157,24 @@ export const Contact: React.FC = () => {
               </div>
               <div>
                 <h3 className="font-bold text-text-main mb-1">Contact</h3>
-                <p className="text-muted">jannajuices@gmail.com<br />+968 7972 7401</p>
+                <p className="text-muted">
+                  <a href="mailto:jannajuices@gmail.com" className="hover:text-primary transition-colors">jannajuices@gmail.com</a><br />
+                  <a href="tel:+96879727401" className="hover:text-primary transition-colors">+968 7972 7401</a>
+                </p>
               </div>
             </div>
-          </div>
+          </address>
 
           {/* Map Area */}
           <div className="w-full h-64 bg-gray-200 rounded-2xl relative overflow-hidden group cursor-pointer shadow-inner">
             <img
               src="/images/locations/contact-map.jpg"
               onError={(e) => { e.currentTarget.src = "https://lh3.googleusercontent.com/aida-public/AB6AXuDyNJgiGGf-qMvEAC_51PlcsTxi4wdLnvnU8iXYGTGeGY1DXCmYis6hozd8ndp9Jbd1EMRM5Jg6VSrM7pMw35qM9mUiXBTqESK88e7_eN_Lo3XY5p4n6eG1dBm7xXfV6FYLqxYwx6Hs7CVjmh9Hf16PXtjC68yO0x-jVSBXVSSm5XgLWzUGPSAgyoV4CE2c3h0zaleaYc2cAGS0dSkWmdlC06ArvdEtse5X1KU2pyGW_3ZL9C0krNUSWg36BtfzbnU2FC-Cp11a7msV"; }}
-              alt="Map location of juice bar"
+              alt="Map showing Hawaii Fresh Juice bar location in Al Wadi Al Kabir, Muscat, Oman"
               className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500"
+              width={500}
+              height={256}
+              loading="lazy"
             />
             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
               <div className="w-12 h-12 bg-primary rounded-full rounded-br-none rotate-45 flex items-center justify-center shadow-lg border-2 border-surface animate-bounce">

@@ -20,10 +20,16 @@ jobs:
         with:
           node-version: 20
           cache: 'npm'
+      - name: Install Chrome for prerendering
+        uses: browser-actions/setup-chrome@v1
       - name: Install dependencies
         run: npm install
-      - name: Build
+      - name: Build with prerendering
         run: npm run build
+        env:
+          PUPPETEER_EXECUTABLE_PATH: /usr/bin/google-chrome-stable
+      - name: Create 404.html for SPA routing
+        run: cp dist/index.html dist/404.html
       - name: Upload Artifacts
         uses: actions/upload-pages-artifact@v3
         with:
