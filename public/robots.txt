@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://hawaiioman.com/sitemap.xml
