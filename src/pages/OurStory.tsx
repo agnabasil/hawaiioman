@@ -34,7 +34,7 @@ export const OurStory: React.FC = () => {
 
       {/* Hero Section */}
       <section className="w-full px-4 md:px-10 max-w-[1200px] mx-auto animate-fade-in-up">
-        <div className="relative w-full h-[600px] md:h-[700px] rounded-[3rem] overflow-hidden shadow-soft flex items-center justify-center bg-background-dark">
+        <div className="relative w-full min-h-[600px] md:min-h-[700px] py-16 md:py-24 rounded-[3rem] overflow-hidden shadow-soft flex items-center justify-center bg-background-dark">
           {/* Background Image */}
           <div
             className="absolute inset-0 background-attachment-fixed bg-center bg-no-repeat bg-cover opacity-60"
@@ -48,7 +48,7 @@ export const OurStory: React.FC = () => {
             <span className="text-accent font-bold tracking-[0.2em] uppercase text-sm md:text-base mb-4 bg-surface/20 backdrop-blur-sm px-4 py-2 rounded-full">
               Our Origins
             </span>
-            <h1 className="text-surface font-display text-5xl md:text-7xl font-black leading-tight tracking-tight mb-6 drop-shadow-lg">
+            <h1 className="text-surface font-display text-4xl md:text-7xl font-black leading-tight tracking-tight mb-6 drop-shadow-lg">
               Rooted in Oman
             </h1>
             <div className="text-surface space-y-6 drop-shadow-md">
