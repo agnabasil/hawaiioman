@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { JUICE_PRODUCTS } from '../data/mockData';
+import { SEOHead } from '../components/SEOHead';
 
 export const ProductDetail: React.FC = () => {
   const { id } = useParams();
@@ -15,43 +16,114 @@ export const ProductDetail: React.FC = () => {
     );
   }
 
+  const productJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": product.name,
+    "description": product.description,
+    "image": `https://hawaiioman.com${product.imageUrl}`,
+    "brand": {
+      "@type": "Brand",
+      "name": "Hawaii Fresh Juice"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "0.200",
+      "priceCurrency": "OMR",
+      "availability": product.isComingSoon
+        ? "https://schema.org/PreOrder"
+        : "https://schema.org/InStock",
+      "seller": {
+        "@type": "Organization",
+        "name": "Hawaii Fresh Juice"
+      }
+    },
+    ...(product.nutrition.calories !== "0" && {
+      "nutrition": {
+        "@type": "NutritionInformation",
+        "calories": `${product.nutrition.calories} calories`,
+        ...Object.fromEntries(
+          product.nutrition.facts
+            .filter(f => f.amount !== "0g")
+            .map(f => [f.label.replace(/\s+/g, '').charAt(0).toLowerCase() + f.label.replace(/\s+/g, '').slice(1) + 'Content', f.amount])
+        )
+      }
+    }),
+    "category": "Fresh Juice",
+    "countryOfOrigin": {
+      "@type": "Country",
+      "name": "Oman"
+    }
+  };
+
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://hawaiioman.com" },
+      { "@type": "ListItem", "position": 2, "name": "Products", "item": "https://hawaiioman.com/products" },
+      { "@type": "ListItem", "position": 3, "name": product.name, "item": `https://hawaiioman.com/products/${product.id}` }
+    ]
+  };
+
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": `Is ${product.name} juice 100% natural?`,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": `Yes, our ${product.name} juice is made from 100% organic ingredients sourced from local Omani markets. No artificial preservatives or additives.`
+        }
+      },
+      {
+        "@type": "Question",
+        "name": `What are the ingredients in ${product.name}?`,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": `${product.name} is blended with ${product.ingredients.map(i => i.name).join(', ')}.`
+        }
+      },
+      {
+        "@type": "Question",
+        "name": `How many calories are in ${product.name}?`,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": `Each 200mL bottle of ${product.name} contains ${product.nutrition.calories} calories.`
+        }
+      },
+      {
+        "@type": "Question",
+        "name": `Where can I buy ${product.name} in Oman?`,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Hawaii Fresh Juice is available at our juice bar in Al Wadi Al Kabir, Muscat, and through select local retailers across the Sultanate of Oman."
+        }
+      }
+    ]
+  };
+
   return (
     <>
-      <script type="application/ld+json">
-        {JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "BreadcrumbList",
-          "itemListElement": [
-            {
-              "@type": "ListItem",
-              "position": 1,
-              "name": "Home",
-              "item": "https://hawaiioman.com"
-            },
-            {
-              "@type": "ListItem",
-              "position": 2,
-              "name": "Products",
-              "item": "https://hawaiioman.com/products"
-            },
-            {
-              "@type": "ListItem",
-              "position": 3,
-              "name": product.name,
-              "item": `https://hawaiioman.com/products/${product.id}`
-            }
-          ]
-        })}
-      </script>
+      <SEOHead
+        title={product.name}
+        description={`${product.description} 100% organic, farm-to-bottle ${product.name} juice from Hawaii Fresh Juice Oman. ${product.nutrition.calories} cal per 200mL.`}
+        canonical={`https://hawaiioman.com/products/${product.id}`}
+        ogImage={`https://hawaiioman.com${product.imageUrl}`}
+        ogType="product"
+        jsonLd={[productJsonLd, breadcrumbJsonLd, faqJsonLd]}
+      />
       <main className="max-w-[1440px] mx-auto px-6 lg:px-16 py-8">
       {/* Breadcrumbs */}
-      <div className="flex flex-wrap items-center gap-2 py-4 mb-4 text-sm">
+      <nav aria-label="Breadcrumb" className="flex flex-wrap items-center gap-2 py-4 mb-4 text-sm">
         <Link to="/" className="text-muted hover:text-primary transition-colors font-medium">Home</Link>
         <span className="text-muted material-symbols-outlined text-[16px]">chevron_right</span>
         <Link to="/products" className="text-muted hover:text-primary transition-colors font-medium">Products</Link>
         <span className="text-muted material-symbols-outlined text-[16px]">chevron_right</span>
         <span className="text-text-main font-semibold">{product.name}</span>
-      </div>
+      </nav>
 
       <div className="flex flex-col lg:flex-row gap-16 xl:gap-24 relative">
         {/* LEFT COLUMN: Sticky Gallery */}
@@ -67,7 +139,9 @@ export const ProductDetail: React.FC = () => {
               <img
                 src={product.imageUrl}
                 onError={(e) => { e.currentTarget.src = product.fallbackUrl; }}
-                alt={product.name}
+                alt={`${product.name} - Fresh organic juice bottle by Hawaii Fresh Juice Oman`}
+                width={500}
+                height={625}
                 className="relative z-10 w-[70%] h-auto object-contain drop-shadow-2xl transition-transform duration-700 ease-in-out group-hover:scale-105"
               />
               <div className="absolute top-6 left-6 z-20 flex flex-col gap-2">
@@ -92,7 +166,7 @@ export const ProductDetail: React.FC = () => {
             <h1 className="font-display font-black text-text-main text-[48px] lg:text-[64px] leading-[1.1] mb-4">
               {product.name}
             </h1>
-            <p className="text-xl text-muted font-display font-medium mb-6">Sweet, Tangy, Earthy &amp; Energizing</p>
+            <p className="text-xl text-muted font-display font-medium mb-6">{product.ingredients.map(i => i.name).slice(0, 3).join(', ')}</p>
 
             <div className="flex items-end gap-4 mb-8">
               <span className="text-4xl font-display font-bold text-text-main">0.200 OMR</span>
@@ -106,12 +180,12 @@ export const ProductDetail: React.FC = () => {
 
           {/* Ingredients Visuals */}
           <div className="mb-12">
-            <h3 className="text-sm font-bold text-muted uppercase tracking-widest mb-6">Blended With</h3>
+            <h2 className="text-sm font-bold text-muted uppercase tracking-widest mb-6">Blended With</h2>
             <div className="flex flex-wrap gap-x-4 gap-y-8">
               {product.ingredients.map((ing, i) => (
                 <div key={i} className="flex flex-col items-center gap-3 w-28">
                   <div className="size-20 rounded-full bg-surface shadow-sm border border-muted/10 flex items-center justify-center overflow-hidden p-2">
-                    <img src={ing.img} className="w-full h-full object-cover rounded-full" alt={ing.name} />
+                    <img src={ing.img} className="w-full h-full object-cover rounded-full" alt={`${ing.name} - ingredient in ${product.name}`} width={80} height={80} loading="lazy" />
                   </div>
                   <span className="text-sm font-medium text-text-main text-center leading-tight">{ing.name}</span>
                 </div>

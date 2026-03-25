@@ -3,26 +3,49 @@
   <url>
     <loc>https://hawaiioman.com/</loc>
     <lastmod>2026-03-25</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://hawaiioman.com/#/products/ginger-orange</loc>
+    <loc>https://hawaiioman.com/products</loc>
     <lastmod>2026-03-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://hawaiioman.com/products/ginger-orange</loc>
+    <lastmod>2026-03-25</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://hawaiioman.com/#/products/ball-grape</loc>
+    <loc>https://hawaiioman.com/products/ball-grape</loc>
     <lastmod>2026-03-25</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://hawaiioman.com/#/products/pieces-mango</loc>
+    <loc>https://hawaiioman.com/products/pieces-mango</loc>
     <lastmod>2026-03-25</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://hawaiioman.com/#/products/natural-lemon</loc>
+    <loc>https://hawaiioman.com/products/natural-lemon</loc>
     <lastmod>2026-03-25</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://hawaiioman.com/story</loc>
+    <lastmod>2026-03-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://hawaiioman.com/contact</loc>
+    <lastmod>2026-03-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
 </urlset>

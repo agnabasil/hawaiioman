@@ -41,7 +41,10 @@ export const Hero: React.FC = () => {
               onError={(e) => {
                 e.currentTarget.src = "https://lh3.googleusercontent.com/aida-public/AB6AXuCwntRX4mJinbpzgMu9ByE-3LxBDUwll6Ym90SZrZ690aeQtu2MpxvfpvVATIMj_bHnjvmBn368ZbGkK6x698aYQ2NoiXko_mlL84zc1qmRlFQmS9JExSKoysuEWUV1tPBweZM58g1fxr7pMO7iCQc03HBeURmHZhDiRtjExaskGEUpSm8uJdiAk70rBkLZJgfxNSp0fc4xhYareObau62VNc5Ffgkl4MH_g0le9igv9XtoR58RpUJYFtQU79DDl6Ytbkohm7trTajB";
               }}
-              alt="Premium Omani Juice"
+              alt="Premium Omani Fresh Juice bottle - Hawaii Fresh Juice signature Ginger Orange blend"
+              width={425}
+              height={425}
+              fetchPriority="high"
               className="relative z-10 w-[85%] h-auto object-contain animate-float drop-shadow-[0_35px_35px_rgba(0,0,0,0.15)]"
             />
           </div>

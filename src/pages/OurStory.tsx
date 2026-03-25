@@ -1,8 +1,32 @@
 import React from 'react';
+import { SEOHead } from '../components/SEOHead';
 
 export const OurStory: React.FC = () => {
   return (
     <div className="flex flex-col gap-24 md:gap-32 pb-24 relative mt-10">
+      <SEOHead
+        title="Our Story"
+        description="Hawaii Fresh Juice was founded in Muscat, Oman with a mission to make fresh, high-quality fruit juices accessible and affordable. Learn about our farm-to-bottle journey."
+        canonical="https://hawaiioman.com/story"
+        jsonLd={[
+          {
+            "@context": "https://schema.org",
+            "@type": "AboutPage",
+            "name": "Our Story - Hawaii Fresh Juice",
+            "description": "The founding story of Hawaii Fresh Juice, an Omani juice brand.",
+            "url": "https://hawaiioman.com/story"
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://hawaiioman.com" },
+              { "@type": "ListItem", "position": 2, "name": "Our Story", "item": "https://hawaiioman.com/story" }
+            ]
+          }
+        ]}
+      />
+
       {/* Decorative Background Blobs */}
       <div className="absolute rounded-full bg-primary opacity-5 blur-[60px] w-[600px] h-[600px] top-0 left-[-200px] -z-10"></div>
       <div className="absolute rounded-full bg-accent opacity-5 blur-[60px] w-[800px] h-[800px] top-[40%] right-[-300px] -z-10"></div>
@@ -56,8 +80,11 @@ export const OurStory: React.FC = () => {
             <div className="w-24 h-24 rounded-full overflow-hidden border-4 border-surface shadow-md mb-2">
               <img
                 src="/images/founder.png"
-                alt="Yasir Arafath - CEO & Founder"
+                alt="Yasir Arafath - CEO & Founder of Hawaii Fresh Juice"
                 className="w-full h-full object-cover object-[center_20%]"
+                width={96}
+                height={96}
+                loading="lazy"
               />
             </div>
             <span className="text-text-main font-display font-bold text-lg">Yasir Arafath</span>

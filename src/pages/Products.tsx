@@ -1,9 +1,36 @@
 import { JUICE_PRODUCTS } from '../data/mockData';
 import { Link } from 'react-router-dom';
+import { SEOHead } from '../components/SEOHead';
 
 export const Products: React.FC = () => {
   return (
     <div className="py-12 px-6 md:px-12 max-w-[1400px] mx-auto relative min-h-screen">
+      <SEOHead
+        title="Our Fresh Juices"
+        description="Explore our collection of 100% natural, organic fruit juices from Oman. Ginger Orange, Ball Grape, Pieces Mango, Natural Lemon — farm-to-bottle freshness."
+        canonical="https://hawaiioman.com/products"
+        jsonLd={[
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://hawaiioman.com" },
+              { "@type": "ListItem", "position": 2, "name": "Products", "item": "https://hawaiioman.com/products" }
+            ]
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "ItemList",
+            "name": "Hawaii Fresh Juices",
+            "itemListElement": JUICE_PRODUCTS.filter(p => !p.isComingSoon).map((product, index) => ({
+              "@type": "ListItem",
+              "position": index + 1,
+              "name": product.name,
+              "url": `https://hawaiioman.com/products/${product.id}`
+            }))
+          }
+        ]}
+      />
 
       {/* Decorative Background Blobs */}
       <div className="absolute top-0 left-[-200px] w-[600px] h-[600px] bg-primary/5 blur-[80px] rounded-full -z-10 pointer-events-none hidden md:block"></div>
@@ -36,7 +63,10 @@ export const Products: React.FC = () => {
                   <img
                     src={product.imageUrl}
                     onError={(e) => { e.currentTarget.src = product.fallbackUrl; }}
-                    alt={product.name}
+                    alt={`${product.name} - Fresh ${product.name} juice bottle by Hawaii Fresh Juice Oman`}
+                    width={320}
+                    height={320}
+                    loading="lazy"
                     className={`object-contain h-full w-full relative z-10 transition-transform duration-500 ${
                       product.isComingSoon ? 'blur-md opacity-60' : 'group-hover:scale-105'
                     }`}
@@ -49,7 +79,7 @@ export const Products: React.FC = () => {
                 </div>
 
                 <div className="flex flex-col flex-grow text-center px-4">
-                  <h4 className="text-2xl font-bold text-text-main font-display mb-2">{product.name}</h4>
+                  <h2 className="text-2xl font-bold text-text-main font-display mb-2">{product.name}</h2>
                   <p className="text-muted text-sm mb-4 leading-relaxed line-clamp-3">{product.description}</p>
                   <div className="mt-auto border-t border-muted/10 pt-4 flex flex-wrap justify-center gap-2">
                     <span className="bg-primary/10 text-primary text-xs font-bold px-3 py-1 rounded-full">Organic</span>
@@ -64,15 +94,17 @@ export const Products: React.FC = () => {
 
             if (product.isComingSoon) {
               return (
-                <div key={product.id} className={className}>
+                <article key={product.id} className={className}>
                   {content}
-                </div>
+                </article>
               );
             }
 
             return (
               <Link key={product.id} to={`/products/${product.id}`} className={className}>
-                {content}
+                <article>
+                  {content}
+                </article>
               </Link>
             );
           })}
