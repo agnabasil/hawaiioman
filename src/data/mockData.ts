@@ -17,7 +17,7 @@ export interface JuiceProduct {
 
 export const JUICE_PRODUCTS: JuiceProduct[] = [
   {
-    id: "orange-sunrise",
+    id: "ginger-orange",
     name: "Ginger Orange",
     description: "A bright, golden crush of premium sun-ripened oranges with a hint of local ginger.",
     imageUrl: "/images/products/orange-juice.png",
@@ -45,7 +45,7 @@ export const JUICE_PRODUCTS: JuiceProduct[] = [
     }
   },
   {
-    id: "jebel-grape",
+    id: "ball-grape",
     name: "Ball Grape",
     description: "Deep, rich, and naturally sweet grapes harvested exclusively from the high-altitude crisp terraces.",
     imageUrl: "/images/products/grape-juice.png",
@@ -73,7 +73,7 @@ export const JUICE_PRODUCTS: JuiceProduct[] = [
     }
   },
   {
-    id: "tropical-mango",
+    id: "pieces-mango",
     name: "Pieces Mango",
     description: "Lusciously sweet and thick mango puree grown organically right in the tropical heart rain forest.",
     imageUrl: "/images/products/mango-juice.png",
@@ -101,7 +101,7 @@ export const JUICE_PRODUCTS: JuiceProduct[] = [
     }
   },
   {
-    id: "nizwa-lemon",
+    id: "natural-lemon",
     name: "Natural Lemon",
     description: "A refreshing blend of zesty lemons, cooling mint, and a touch of sweetness.",
     imageUrl: "/images/products/lemon-juice.png",
