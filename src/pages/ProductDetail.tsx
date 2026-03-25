@@ -16,7 +16,34 @@ export const ProductDetail: React.FC = () => {
   }
 
   return (
-    <main className="max-w-[1440px] mx-auto px-6 lg:px-16 py-8">
+    <>
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://hawaiioman.com"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Products",
+              "item": "https://hawaiioman.com/products"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": product.name,
+              "item": `https://hawaiioman.com/products/${product.id}`
+            }
+          ]
+        })}
+      </script>
+      <main className="max-w-[1440px] mx-auto px-6 lg:px-16 py-8">
       {/* Breadcrumbs */}
       <div className="flex flex-wrap items-center gap-2 py-4 mb-4 text-sm">
         <Link to="/" className="text-muted hover:text-primary transition-colors font-medium">Home</Link>
@@ -160,5 +187,6 @@ export const ProductDetail: React.FC = () => {
         </div>
       </div>
     </main>
+    </>
   );
 };

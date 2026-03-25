@@ -31,6 +31,7 @@ export const ProductHighlights: React.FC = () => {
                     src={product.imageUrl} 
                     onError={(e) => { e.currentTarget.src = product.fallbackUrl; }}
                     alt={product.name} 
+                    loading="lazy"
                     className={`product-img w-full h-full object-contain drop-shadow-xl transition-all duration-500 ${
                       product.isComingSoon ? 'blur-md opacity-60' : ''
                     }`}
