@@ -92,6 +92,47 @@ export const OurStory: React.FC = () => {
           </div>
         </div>
       </section>
+      {/* Top 10 Customers Section */}
+      <section className="w-full px-4 md:px-10 max-w-[1200px] mx-auto mb-24 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
+        <div className="bg-surface/50 backdrop-blur-md rounded-[3rem] p-8 md:p-16 border border-primary/10 shadow-soft relative overflow-hidden">
+          {/* Decorative Blobs for this section */}
+          <div className="absolute rounded-full bg-accent opacity-10 blur-[40px] w-64 h-64 -top-32 -right-32"></div>
+          <div className="absolute rounded-full bg-primary opacity-5 blur-[40px] w-64 h-64 -bottom-32 -left-32"></div>
+
+          <div className="text-center mb-12 relative z-10">
+            <h2 className="text-text-main font-display text-3xl md:text-5xl font-bold mb-4">Our Valued Partners</h2>
+            <p className="text-muted max-w-2xl mx-auto font-medium">
+              We are proud to serve some of the most respected organizations across Oman and beyond.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 relative z-10">
+            {[
+              "Oman Ministry of Defence",
+              "Al Khuwair University",
+              "Al Aba Catering Services",
+              "Rozanna Restaurant Group",
+              "Royal Hospital Shopping Centre",
+              "Sri Lankan Schools Oman",
+              "Welcome Restaurant Group",
+              "Famous Bakery",
+              "Fawaris Bakery",
+              "Retail Shops, Groceries & Schools"
+            ].map((name, index) => (
+              <div 
+                key={index}
+                className="group p-6 rounded-2xl bg-surface border border-primary/5 shadow-sm hover:shadow-soft-hover hover:-translate-y-1 transition-all duration-300 flex items-center justify-center text-center h-32"
+              >
+                <span className={`text-text-main font-display font-bold ${name.length > 25 ? 'text-base' : 'text-lg'} leading-snug group-hover:text-primary transition-colors`}>
+                  {name === "Retail Shops, Groceries & Schools" ? (
+                    <span className="text-muted text-sm font-body italic">+ {name}</span>
+                  ) : name}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
     </div>
   );
 };
