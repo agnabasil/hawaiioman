@@ -11,12 +11,16 @@ const productRoutes = JUICE_PRODUCTS
   .filter((p) => !p.isComingSoon)
   .map((p) => `/products/${p.id}`)
 
+// '/' MUST come last: the prerender plugin writes the home render into
+// dist/index.html, which then becomes the served base for any route processed
+// afterwards — polluting their <head> with home's tags (duplicate title/og).
+// Processing '/' last keeps every sub-route rendering against the clean base.
 const routes = [
-  '/',
   '/products',
   ...productRoutes,
   '/story',
   '/contact',
+  '/',
 ]
 
 // https://vite.dev/config/

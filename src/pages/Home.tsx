@@ -4,7 +4,6 @@ import { Marquee } from '../components/ui/Marquee';
 import { ProductHighlights } from '../components/home/ProductHighlights';
 import { HeritageStrap } from '../components/home/HeritageStrap';
 import { SEOHead } from '../components/SEOHead';
-import { localBusinessSchema, webSiteSchema } from '../data/seo';
 
 export const Home: React.FC = () => {
   return (
@@ -14,8 +13,6 @@ export const Home: React.FC = () => {
         description="Authentic Omani freshness in every bottle. Hawaii Fresh Juice offers 100% natural, farm-to-bottle juices from carefully selected local fruits. Taste the bounty of Oman."
         canonical="https://hawaiioman.com/"
         jsonLd={[
-          localBusinessSchema,
-          webSiteSchema,
           {
             "@context": "https://schema.org",
             "@type": "BreadcrumbList",
