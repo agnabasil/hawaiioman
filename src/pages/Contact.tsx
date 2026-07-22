@@ -53,7 +53,7 @@ export const Contact: React.FC = () => {
 
     try {
       // Endpoint provided by user securely linking to their Google Sheet
-      const scriptUrl = 'https://script.google.com/macros/s/AKfycbyFVmTawzr0x2TcrO2aIrxYflvjGobSlAPgPrb_unySWMbKAZ0zDBkF9uRI9KybNvwlVw/exec';
+      const scriptUrl = 'https://script.google.com/macros/s/AKfycbwK8TL0UfewfILI4iwyWI4e0gc8L8hJKAMuQFg4o3TUJ67UF_c5-uW-SF758PiK9CTdqw/exec';
 
       // We use no-cors to blindly fire the POST request and bypass strict Google CORS preflight checks
       await fetch(scriptUrl, {
