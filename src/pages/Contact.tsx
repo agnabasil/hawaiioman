@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { SEOHead } from '../components/SEOHead';
+import { localBusinessSchema } from '../data/seo';
 
 // RFC-5322-practical email check: catches typos and junk without rejecting valid addresses.
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
@@ -77,6 +78,7 @@ export const Contact: React.FC = () => {
         description="Get in touch with Hawaii Fresh Juice in Muscat, Oman. Visit our juice bar in Al Wadi Al Kabir, or drop us a message about wholesale inquiries, partnerships, or feedback."
         canonical="https://hawaiioman.com/contact"
         jsonLd={[
+          localBusinessSchema,
           {
             "@context": "https://schema.org",
             "@type": "ContactPage",
