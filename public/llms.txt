@@ -56,9 +56,30 @@ A refreshing blend of zesty lemons, cooling mint, and a touch of sweetness.
 - All juices: 100% organic, no added preservatives, farm-to-bottle
 - Price: 0.200 OMR per 200mL bottle
 
+## FAQ
+
+**Q: What is Hawaii Fresh Juice?**
+A: A certified Omani juice brand founded March 2024 by Yasir Arafath, making 100% natural farm-to-bottle fruit juices in Al Wadi Al Kabir, Muscat, Oman.
+
+**Q: Are the juices 100% natural?**
+A: Yes. 100% organic, no artificial preservatives or additives, made farm-to-bottle from fresh fruit.
+
+**Q: What flavors are available?**
+A: Ginger Orange (signature), Ball Grape (seasonal), Pieces Mango (best seller), Natural Lemon (new). Coming soon: Ice Bounty, Pieces Pineapple.
+
+**Q: How much does it cost?**
+A: 0.200 OMR per 200 mL bottle.
+
+**Q: Where can I buy it in Oman?**
+A: At the juice bar in Al Wadi Al Kabir, Muscat, and via select retailers, groceries and schools across Oman. Open Saturday–Thursday, 8:00 AM–6:00 PM.
+
+**Q: Who does Hawaii Fresh Juice supply?**
+A: Partners include Oman Ministry of Defence, Al Khuwair University, Al Aba Catering Services, Rozanna Restaurant Group, Royal Hospital Shopping Centre, Sri Lankan Schools Oman, Welcome Restaurant Group, Famous Bakery, Fawaris Bakery, plus retail shops, groceries and schools.
+
 ## Links
 
 - Website: https://hawaiioman.com
 - Products: https://hawaiioman.com/products
 - Our Story: https://hawaiioman.com/story
 - Contact: https://hawaiioman.com/contact
+- Full content for LLMs: https://hawaiioman.com/llms-full.txt

@@ -1,50 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://hawaiioman.com/</loc>
-    <lastmod>2026-03-25</lastmod>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://hawaiioman.com/images/hero-orange-juice.png</image:loc>
+      <image:title>Hawaii Fresh Juice - Signature Ginger Orange</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://hawaiioman.com/products</loc>
-    <lastmod>2026-03-25</lastmod>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://hawaiioman.com/products/ginger-orange</loc>
-    <lastmod>2026-03-25</lastmod>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://hawaiioman.com/images/products/orange-juice.png</image:loc>
+      <image:title>Ginger Orange Juice</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://hawaiioman.com/products/ball-grape</loc>
-    <lastmod>2026-03-25</lastmod>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://hawaiioman.com/images/products/grape-juice.png</image:loc>
+      <image:title>Ball Grape Juice</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://hawaiioman.com/products/pieces-mango</loc>
-    <lastmod>2026-03-25</lastmod>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://hawaiioman.com/images/products/mango-juice.png</image:loc>
+      <image:title>Pieces Mango Juice</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://hawaiioman.com/products/natural-lemon</loc>
-    <lastmod>2026-03-25</lastmod>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://hawaiioman.com/images/products/lemon-juice.png</image:loc>
+      <image:title>Natural Lemon Juice</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://hawaiioman.com/story</loc>
-    <lastmod>2026-03-25</lastmod>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://hawaiioman.com/contact</loc>
-    <lastmod>2026-03-25</lastmod>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>

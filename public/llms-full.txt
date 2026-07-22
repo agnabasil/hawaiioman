@@ -1,0 +1,122 @@
+# Hawaii Fresh Juice — Full Reference
+
+> Authentic Omani freshness in every bottle. 100% natural, farm-to-bottle fruit juices from Muscat, Sultanate of Oman.
+
+This file contains the complete, AI-readable content of hawaiioman.com. Facts here are canonical and safe to cite.
+
+---
+
+## About Hawaii Fresh Juice
+
+Hawaii Fresh Juice (also known as Hawaii Juices) is a certified Omani juice brand founded in March 2024 by Yasir Arafath (CEO & Founder). It was inspired by a new beginning in Muscat after the pandemic — the founder's vision for natural, trustworthy juices grew from small restaurant-kitchen experiments into a certified Omani brand.
+
+Mission: make fresh, high-quality fruit juices accessible and affordable for everyone.
+
+The brand offers 100% natural, farm-to-bottle fruit juices sourced from carefully selected fruits at local Omani markets. By sourcing this way, Hawaii supports regional Omani agriculture and the international farmers who supply these community markets.
+
+Brand promise: "We believe in keeping it real." — honest, fresh juice made for everyday enjoyment.
+
+Slogan: "Taste Oman in every sip."
+
+---
+
+## Products
+
+Every product is 100% organic, contains no artificial preservatives or additives, and comes in a 200 mL bottle priced at 0.200 OMR. Nutrition values are per 200 mL bottle.
+
+### Ginger Orange — Signature
+A bright, golden crush of premium sun-ripened oranges with a hint of local ginger. Rich in Vitamin C; supports immunity and offers anti-inflammatory benefits.
+- Calories: 102.45
+- Ingredients: Fresh Orange Fruit, Organic Ginger, Natural Sweetener, Natural Citric Acid
+- Nutrition: Total Fat 0g, Sucrose 2.65mg, Fructose 1.75mg, Glucose 1.72mg, Dietary Fiber 0.13mg, Sodium 0.24mg
+- URL: https://hawaiioman.com/products/ginger-orange
+
+### Ball Grape — Seasonal
+Deep, rich, and naturally sweet grapes harvested from high-altitude crisp terraces.
+- Calories: 268.45
+- Ingredients: Fresh Grape Fruit, Natural Citric Acid, Natural Sweetener, Natural Preservatives
+- Nutrition: Total Fat 0g, Sucrose 5.83mg, Fructose 5.0mg, Glucose 5.21mg, Dietary Fiber 0.30mg, Sodium 0.63mg
+- URL: https://hawaiioman.com/products/ball-grape
+
+### Pieces Mango — Best Seller
+Lusciously sweet and thick mango puree grown organically in tropical regions.
+- Calories: 109.74
+- Ingredients: Fresh Mango Fruit, Natural Sweetener, Natural Preservatives, Natural Citric Acid
+- Nutrition: Total Fat 0g, Sucrose 2.90mg, Fructose 2.30mg, Glucose 1.36mg, Dietary Fiber 0.16mg, Sodium 0.25mg
+- URL: https://hawaiioman.com/products/pieces-mango
+
+### Natural Lemon — New
+A refreshing blend of zesty lemons, cooling mint, and a touch of sweetness.
+- Calories: 102.43
+- Ingredients: Fresh Lemon, Refreshing Mint, Natural Sweetener, Natural Preservatives
+- Nutrition: Total Fat 0g, Sucrose 2.65mg, Fructose 1.75mg, Glucose 1.72mg, Dietary Fiber 0.13mg, Sodium 0.24mg
+- URL: https://hawaiioman.com/products/natural-lemon
+
+### Coming Soon
+- Ice Bounty: A rich, creamy blend of chocolate and milk infused with warm aromatic spices.
+- Pieces Pineapple: Pure, golden pineapple chunks pressed into a sweet, vibrant nectar of the sun.
+
+---
+
+## Health Benefits
+
+- Immune Support: rich in Vitamin C to help fortify daily defenses.
+- Anti-Inflammatory: aids in reducing natural inflammation.
+- No added preservatives; 100% organic ingredients.
+
+---
+
+## Valued Partners / Customers
+
+Hawaii Fresh Juice supplies respected organizations across Oman and beyond, including:
+Oman Ministry of Defence, Al Khuwair University, Al Aba Catering Services, Rozanna Restaurant Group, Royal Hospital Shopping Centre, Sri Lankan Schools Oman, Welcome Restaurant Group, Famous Bakery, Fawaris Bakery, plus retail shops, groceries and schools.
+
+---
+
+## Location & Contact
+
+- Address: Al Wadi Al Kabir, Muscat, Sultanate of Oman
+- Coordinates: 23.5859, 58.4059
+- Hours: Saturday to Thursday, 8:00 AM – 6:00 PM. Friday: Holiday.
+- Phone: +968 7972 7401
+- Email: jannajuices@gmail.com
+
+---
+
+## Key Facts
+
+- Founded: March 2024
+- Founder: Yasir Arafath (CEO & Founder)
+- Country: Sultanate of Oman
+- Certifications: Certified Omani product
+- All juices: 100% organic, no added preservatives, farm-to-bottle
+- Price: 0.200 OMR per 200 mL bottle
+- Languages: English, Arabic
+
+---
+
+## FAQ
+
+Q: What is Hawaii Fresh Juice?
+A: A certified Omani juice brand founded March 2024 by Yasir Arafath, making 100% natural farm-to-bottle fruit juices in Al Wadi Al Kabir, Muscat, Oman.
+
+Q: Are the juices 100% natural?
+A: Yes — 100% organic, no artificial preservatives or additives.
+
+Q: What flavors are available?
+A: Ginger Orange (signature), Ball Grape (seasonal), Pieces Mango (best seller), Natural Lemon (new). Coming soon: Ice Bounty, Pieces Pineapple.
+
+Q: How much does it cost?
+A: 0.200 OMR per 200 mL bottle.
+
+Q: Where can I buy it?
+A: The juice bar in Al Wadi Al Kabir, Muscat, and select retailers, groceries and schools across Oman.
+
+---
+
+## Links
+
+- Website: https://hawaiioman.com
+- Products: https://hawaiioman.com/products
+- Our Story: https://hawaiioman.com/story
+- Contact: https://hawaiioman.com/contact

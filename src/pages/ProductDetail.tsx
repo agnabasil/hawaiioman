@@ -16,20 +16,31 @@ export const ProductDetail: React.FC = () => {
     );
   }
 
+  const productUrl = `https://hawaiioman.com/products/${product.id}`;
+
   const productJsonLd = {
     "@context": "https://schema.org",
     "@type": "Product",
     "name": product.name,
     "description": product.description,
     "image": `https://hawaiioman.com${product.imageUrl}`,
+    "url": productUrl,
+    "sku": product.id,
     "brand": {
       "@type": "Brand",
       "name": "Hawaii Fresh Juice"
     },
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Hawaii Fresh Juice"
+    },
     "offers": {
       "@type": "Offer",
+      "url": productUrl,
       "price": "0.200",
       "priceCurrency": "OMR",
+      "priceValidUntil": "2027-12-31",
+      "itemCondition": "https://schema.org/NewCondition",
       "availability": product.isComingSoon
         ? "https://schema.org/PreOrder"
         : "https://schema.org/InStock",

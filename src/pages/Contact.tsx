@@ -6,10 +6,26 @@ export const Contact: React.FC = () => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setStatus('submitting');
 
     const form = e.currentTarget;
     const formData = new FormData(form);
+
+    // Honeypot: real users leave this hidden field empty; bots fill everything.
+    // Silently drop the submission (fake success) so spam bots get no signal.
+    if ((formData.get('company') as string)?.trim()) {
+      setStatus('success');
+      form.reset();
+      return;
+    }
+
+    // Reject oversized payloads before they hit the network.
+    const message = (formData.get('message') as string) || '';
+    if (message.length > 5000) {
+      setStatus('error');
+      return;
+    }
+
+    setStatus('submitting');
 
     try {
       // Endpoint provided by user securely linking to their Google Sheet
@@ -68,6 +84,16 @@ export const Contact: React.FC = () => {
           </div>
 
           <form className="w-full flex flex-col gap-6" onSubmit={handleSubmit}>
+            {/* Honeypot — hidden from users, off-screen, excluded from tab order. Bots fill it. */}
+            <input
+              type="text"
+              name="company"
+              tabIndex={-1}
+              autoComplete="off"
+              aria-hidden="true"
+              className="absolute left-[-9999px] w-px h-px opacity-0 pointer-events-none"
+            />
+
             <div className="relative">
               <input
                 type="text"
@@ -75,6 +101,8 @@ export const Contact: React.FC = () => {
                 name="name"
                 placeholder="Full Name"
                 required
+                maxLength={100}
+                autoComplete="name"
                 className="w-full bg-background-light border-0 border-b-2 border-muted/30 focus:border-primary px-4 py-3 placeholder-muted text-text-main focus:ring-0 transition-colors"
               />
             </div>
@@ -86,6 +114,8 @@ export const Contact: React.FC = () => {
                 name="email"
                 placeholder="Email Address"
                 required
+                maxLength={254}
+                autoComplete="email"
                 className="w-full bg-background-light border-0 border-b-2 border-muted/30 focus:border-primary px-4 py-3 placeholder-muted text-text-main focus:ring-0 transition-colors"
               />
             </div>
@@ -97,6 +127,7 @@ export const Contact: React.FC = () => {
                 placeholder="Your Message"
                 required
                 rows={4}
+                maxLength={5000}
                 className="w-full bg-background-light border-0 border-b-2 border-muted/30 focus:border-primary px-4 py-3 placeholder-muted text-text-main resize-none focus:ring-0 transition-colors"
               ></textarea>
             </div>
