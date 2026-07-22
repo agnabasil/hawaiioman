@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
 import { SEOHead } from '../components/SEOHead';
 
+// RFC-5322-practical email check: catches typos and junk without rejecting valid addresses.
+const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+
 export const Contact: React.FC = () => {
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+  const [errorMsg, setErrorMsg] = useState('');
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -18,9 +22,29 @@ export const Contact: React.FC = () => {
       return;
     }
 
-    // Reject oversized payloads before they hit the network.
+    const name = (formData.get('name') as string)?.trim() || '';
+    const email = (formData.get('email') as string)?.trim() || '';
     const message = (formData.get('message') as string) || '';
+
+    // Validate before hitting the network — blocks junk/malformed entries.
+    if (name.length < 2) {
+      setErrorMsg('Please enter your full name.');
+      setStatus('error');
+      return;
+    }
+    if (!EMAIL_REGEX.test(email) || email.length > 254) {
+      setErrorMsg('Please enter a valid email address.');
+      setStatus('error');
+      return;
+    }
+    if (message.trim().length < 5) {
+      setErrorMsg('Please enter a short message.');
+      setStatus('error');
+      return;
+    }
+    // Reject oversized payloads before they hit the network.
     if (message.length > 5000) {
+      setErrorMsg('Your message is too long (5000 characters max).');
       setStatus('error');
       return;
     }
@@ -42,6 +66,7 @@ export const Contact: React.FC = () => {
       form.reset();
     } catch (error) {
       console.error('Submission failed:', error);
+      setErrorMsg("We couldn't deliver your message. Please try again or email us directly.");
       setStatus('error');
     }
   };
@@ -147,7 +172,7 @@ export const Contact: React.FC = () => {
                   <span className="material-symbols-outlined text-red-600">error</span>
                   Something went wrong
                 </p>
-                <p className="text-sm mt-1">We couldn't deliver your message. Please try again or email us directly.</p>
+                <p className="text-sm mt-1">{errorMsg || "We couldn't deliver your message. Please try again or email us directly."}</p>
               </div>
             )}
 
