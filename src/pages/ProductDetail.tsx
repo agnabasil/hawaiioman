@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link } from 'react-router';
 import { JUICE_PRODUCTS } from '../data/mockData';
 import { SEOHead } from '../components/SEOHead';
 

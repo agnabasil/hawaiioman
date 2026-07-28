@@ -1,5 +1,5 @@
 import { JUICE_PRODUCTS } from '../../data/mockData';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 
 export const ProductHighlights: React.FC = () => {
   return (

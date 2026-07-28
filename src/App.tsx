@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router';
 import { HelmetProvider } from 'react-helmet-async';
 import { Header } from './components/layout/Header';
 import { Footer } from './components/layout/Footer';
