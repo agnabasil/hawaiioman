@@ -4,9 +4,14 @@
 <head>
   <meta charset="UTF-8" />
 
-  <!-- Security hardening (defense-in-depth; GitHub Pages can't set HTTP headers) -->
+  <!-- Security hardening (defense-in-depth; GitHub Pages can't set HTTP headers).
+       script-src omits 'unsafe-inline' on purpose: every inline script we ship
+       is an application/ld+json data block, and CSP does not apply script-src
+       to those, so allowing inline script would only whitelist injected code.
+       style-src keeps 'unsafe-inline' because React style props render as
+       inline style attributes. -->
   <meta http-equiv="Content-Security-Policy"
-    content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://script.google.com https://script.googleusercontent.com; form-action 'self' https://script.google.com; frame-ancestors 'none'; base-uri 'self'; object-src 'none'" />
+    content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://script.google.com https://script.googleusercontent.com; form-action 'self' https://script.google.com; frame-ancestors 'none'; base-uri 'self'; object-src 'none'; upgrade-insecure-requests" />
   <meta name="referrer" content="strict-origin-when-cross-origin" />
 
   <link rel="icon" type="image/png" href="/favicon.png" />

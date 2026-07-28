@@ -21,9 +21,15 @@ jobs:
           node-version: 20
           cache: 'npm'
       - name: Install Chrome for prerendering
-        uses: browser-actions/setup-chrome@v1
+        # Third-party action pinned to a commit SHA (v1 tag = c785b87, 2025-11-14):
+        # a mutable tag lets the publisher (or anyone who compromises the repo)
+        # change what runs in this workflow after review.
+        uses: browser-actions/setup-chrome@c785b87e244131f27c9f19c1a33e2ead956ab7ce # v1
       - name: Install dependencies
-        run: npm install
+        # npm ci installs exactly the audited tree in package-lock.json.
+        # npm install re-resolves semver ranges, so a dependency published
+        # after the lockfile was audited could land in a production build.
+        run: npm ci
       - name: Build with prerendering
         run: npm run build
         env:
